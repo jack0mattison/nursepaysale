@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { BarChart3, ChevronRight } from "lucide-react";
 import { bands } from "@/data/bands";
 import { locations } from "@/data/locations";
 import { formatCurrency } from "@/lib/salary-utils";
@@ -99,16 +98,9 @@ export default function HomePage() {
             </div>
 
             <div className="w-full max-w-md flex-1 lg:max-w-lg">
-              <div className="relative flex flex-col items-center gap-6">
-                <img
-                  src="https://cdn.undraw.co/illustration/personal-finance_xpqg.svg"
-                  alt=""
-                  className="h-48 w-auto object-contain sm:h-56"
-                  style={{ filter: "brightness(0) invert(1) opacity(0.9)" }}
-                />
-                <div className="relative w-full">
-                  <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-blue-500/20 blur-2xl" />
-                  <div className="relative rounded-3xl border border-white/10 bg-white/95 p-4 shadow-xl backdrop-blur">
+              <div className="relative">
+                <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-blue-500/20 blur-2xl" />
+                <div className="relative rounded-3xl border border-white/10 bg-white/95 p-4 shadow-xl backdrop-blur">
                   <div className="mb-3 flex items-center justify-between">
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-500">
@@ -131,7 +123,6 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-                </div>
               </div>
             </div>
           </div>
@@ -149,17 +140,13 @@ export default function HomePage() {
                 href={href}
                 className="group flex flex-col rounded-xl border border-border bg-white p-5 text-left shadow-sm transition-all hover:border-primary hover:shadow-md"
               >
-                <span className="text-primary">
-                  <BarChart3 className="h-6 w-6 shrink-0" strokeWidth={1.5} />
-                </span>
-                <h3 className="mt-3 font-semibold text-primary">{title}</h3>
+                <h3 className="font-semibold text-primary">{title}</h3>
                 <p className="mt-1 text-sm font-medium text-text-primary">
                   {formatCurrency(entry_salary)} – {formatCurrency(top_salary)}
                 </p>
                 <p className="mt-1 text-xs text-text-secondary">{typical_roles[0]}</p>
-                <span className="mt-auto pt-3 inline-flex items-center text-sm font-medium text-primary group-hover:translate-x-0.5">
-                  View salary pages
-                  <ChevronRight className="ml-1 h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" />
+                <span className="mt-auto pt-3 text-sm font-medium text-primary">
+                  View salary pages →
                 </span>
               </Link>
             ))}

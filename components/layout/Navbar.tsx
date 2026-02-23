@@ -30,7 +30,7 @@ export function Navbar() {
           >
             <button
               type="button"
-              className="flex items-center gap-1 text-text-primary hover:text-primary"
+              className="flex items-center gap-1 text-text-primary transition-colors hover:text-primary hover:underline"
             >
               Salary Bands
               <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -38,12 +38,12 @@ export function Navbar() {
               </svg>
             </button>
             {bandsOpen && (
-              <div className="absolute left-0 top-full mt-1 w-48 rounded-lg border border-border bg-white py-1 shadow-lg">
+              <div className="absolute left-0 top-full w-48 rounded-lg border border-border bg-white py-1 shadow-lg">
                 {BAND_LINKS.map(({ label, href }) => (
                   <Link
                     key={href}
                     href={href}
-                    className="block px-4 py-2 text-sm text-text-primary hover:bg-bg-light hover:text-primary"
+                    className="block px-4 py-2 text-sm text-text-primary transition-colors hover:bg-bg-light hover:text-primary hover:underline"
                   >
                     {label}
                   </Link>
@@ -53,27 +53,27 @@ export function Navbar() {
           </div>
           <Link
             href="/specialisms"
-            className="text-text-primary hover:text-primary"
+            className="text-text-primary transition-colors hover:text-primary hover:underline"
           >
             Specialisms
           </Link>
           <Link
             href="/tools/nhs-salary-calculator"
-            className="text-text-primary hover:text-primary"
+            className="text-text-primary transition-colors hover:text-primary hover:underline"
           >
             Calculator
           </Link>
           <Link
             href="/guides"
-            className="text-text-primary hover:text-primary"
+            className="text-text-primary transition-colors hover:text-primary hover:underline"
           >
             Guides
           </Link>
           <Link
             href="/pro"
-            className="rounded-lg bg-primary-light px-4 py-2 font-medium text-white hover:bg-primary"
+            className="rounded-lg bg-primary-light px-4 py-2 font-medium text-white transition-colors hover:bg-primary"
           >
-            Pro
+            Get Pro
           </Link>
         </div>
 
@@ -82,7 +82,7 @@ export function Navbar() {
             href="/pro"
             className="rounded bg-primary-light px-3 py-1.5 text-sm font-medium text-white"
           >
-            Pro
+            Get Pro
           </Link>
         </div>
       </nav>

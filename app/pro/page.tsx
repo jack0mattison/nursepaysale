@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { MessageCircle, FileCheck, Sparkles, ChevronRight } from "lucide-react";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://nursepayscale.co.uk";
 
@@ -14,19 +13,16 @@ const FEATURES = [
     title: "Negotiation Coach",
     description: "Get a tailored script for your appraisal or band discussion. We use your band, trust and achievements to craft opening lines, talking points and a closing ask.",
     href: "/pro/negotiation-coach",
-    icon: MessageCircle,
   },
   {
     title: "CV Reviewer",
     description: "Upload your CV or personal statement. Get an assessment, strengths to keep, improvements with rewrites, and missing NHS keywords.",
     href: "/pro/cv-reviewer",
-    icon: FileCheck,
   },
   {
     title: "Interview Prep",
     description: "Prepare for Band 6+ interviews with likely questions, STAR outlines and tips that reference the NMC Code and Trust values.",
     href: "/pro/interview-prep",
-    icon: Sparkles,
   },
 ];
 
@@ -96,14 +92,6 @@ export default function ProPage() {
               </Link>
             </div>
           </div>
-          <div className="shrink-0">
-            <img
-              src="https://cdn.undraw.co/illustration/success_288d.svg"
-              alt=""
-              className="h-56 w-auto object-contain sm:h-64"
-              style={{ filter: "brightness(0) invert(1) opacity(0.9)" }}
-            />
-          </div>
         </div>
       </section>
 
@@ -123,26 +111,19 @@ export default function ProPage() {
           Three core tools, plus progression roadmap — all in one subscription.
         </p>
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
-          {FEATURES.map((f) => {
-            const Icon = f.icon;
-            return (
-              <Link
-                key={f.href}
-                href={f.href}
-                className="group flex flex-col rounded-xl border border-border bg-white p-6 shadow-sm transition-all hover:border-primary hover:shadow-md"
-              >
-                <span className="text-primary">
-                  <Icon className="h-8 w-8 shrink-0" strokeWidth={1.5} />
-                </span>
-                <h3 className="mt-4 text-lg font-semibold text-primary">{f.title}</h3>
-                <p className="mt-2 flex-1 text-sm text-text-secondary">{f.description}</p>
-                <span className="mt-4 inline-flex items-center text-sm font-medium text-primary group-hover:underline">
-                  Use {f.title}
-                  <ChevronRight className="ml-1 h-4 w-4 shrink-0" />
-                </span>
-              </Link>
-            );
-          })}
+          {FEATURES.map((f) => (
+            <Link
+              key={f.href}
+              href={f.href}
+              className="group flex flex-col rounded-xl border border-border bg-white p-6 shadow-sm transition-all hover:border-primary hover:shadow-md"
+            >
+              <h3 className="text-lg font-semibold text-primary">{f.title}</h3>
+              <p className="mt-2 flex-1 text-sm text-text-secondary">{f.description}</p>
+              <span className="mt-4 text-sm font-medium text-primary group-hover:underline">
+                Use {f.title} →
+              </span>
+            </Link>
+          ))}
         </div>
         </div>
       </section>
