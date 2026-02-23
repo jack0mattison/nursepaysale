@@ -54,27 +54,81 @@ export default function HomePage() {
         }}
       />
       <div>
-        <section className="bg-bg-light py-12 sm:py-16">
-          <div className="mx-auto max-w-content px-4 sm:px-6 text-center">
-            <h1 className="text-3xl font-bold text-primary sm:text-4xl">
-              Your Complete NHS Nurse Salary Guide
-            </h1>
-            <p className="mt-4 text-lg text-text-secondary max-w-2xl mx-auto">
-              Accurate pay scale data for every NHS band and location in the UK. Updated for 2025/26.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4">
-              <Link
-                href="/band-5-nurse-salary"
-                className="rounded-lg bg-primary px-6 py-3 font-medium text-white hover:bg-primary-light"
-              >
-                Find My Band Salary
-              </Link>
-              <Link
-                href="/tools/nhs-salary-calculator"
-                className="rounded-lg border-2 border-primary px-6 py-3 font-medium text-primary hover:bg-primary hover:text-white"
-              >
-                Calculate Take-Home Pay
-              </Link>
+        <section className="bg-gradient-to-r from-blue-800 to-blue-600 py-14 sm:py-20">
+          <div className="mx-auto flex max-w-content flex-col items-start gap-10 px-4 sm:px-6 lg:flex-row lg:items-center">
+            <div className="max-w-xl text-left text-white">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-200">
+                NHS nurse pay, made clear
+              </p>
+              <h1 className="mt-4 text-3xl font-bold sm:text-4xl lg:text-5xl">
+                See your NHS nurse salary in seconds.
+              </h1>
+              <p className="mt-4 text-base sm:text-lg text-blue-100">
+                Instantly compare Agenda for Change pay by band, location and years in post — plus a take‑home
+                calculator built just for NHS nurses.
+              </p>
+
+              <div className="mt-6 inline-flex items-baseline gap-3 rounded-full bg-blue-700/60 px-4 py-2 text-sm text-blue-100">
+                <div className="relative inline-flex items-baseline gap-1">
+                  <span className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-200">
+                    Coverage
+                  </span>
+                  <span className="ml-2 text-2xl font-semibold leading-none text-white animate-pulse">
+                    395+
+                  </span>
+                  <span className="text-xs font-medium text-blue-200">
+                    salary pages across UK bands &amp; locations
+                  </span>
+                </div>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-4">
+                <Link
+                  href="/band-5-nurse-salary"
+                  className="inline-flex items-center justify-center rounded-lg bg-white px-6 py-3 text-sm font-semibold text-blue-800 shadow-sm transition hover:bg-blue-50"
+                >
+                  Find my band salary
+                </Link>
+                <Link
+                  href="/tools/nhs-salary-calculator"
+                  className="inline-flex items-center justify-center rounded-lg border border-blue-200/80 bg-transparent px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700/60"
+                >
+                  Open salary calculator
+                </Link>
+              </div>
+
+              <p className="mt-4 text-xs text-blue-200">
+                Trusted by thousands of UK nurses. Updated for 2025/26 pay scales.
+              </p>
+            </div>
+
+            <div className="w-full max-w-md flex-1 lg:max-w-lg">
+              <div className="relative">
+                <div className="pointer-events-none absolute -inset-4 rounded-3xl bg-blue-500/20 blur-2xl" />
+                <div className="relative rounded-3xl border border-white/10 bg-white/95 p-4 shadow-xl backdrop-blur">
+                  <div className="mb-3 flex items-center justify-between">
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-500">
+                        Live preview
+                      </p>
+                      <p className="mt-1 text-sm font-medium text-slate-900">
+                        NHS salary calculator
+                      </p>
+                    </div>
+                    <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-semibold text-blue-700">
+                      Free tool
+                    </span>
+                  </div>
+                  <div className="overflow-hidden rounded-2xl border border-slate-200 bg-white">
+                    <div className="border-b border-slate-100 bg-slate-50 px-3 py-2 text-xs font-medium text-slate-600">
+                      Band &amp; location
+                    </div>
+                    <div className="p-3">
+                      <SalaryCalculator />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
