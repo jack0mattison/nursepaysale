@@ -58,12 +58,12 @@ export default function HomePage() {
         <section
           className="relative py-14 sm:py-20"
           style={{
-            backgroundImage: "url('https://source.unsplash.com/1600x900/?nurse,hospital')",
+            backgroundImage: "url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
-          <div className="absolute inset-0 bg-blue-900/75" aria-hidden />
+          <div className="absolute inset-0 bg-blue-900/60" aria-hidden />
           <div className="relative z-10 mx-auto flex max-w-content flex-col items-start gap-10 px-4 sm:px-6 lg:flex-row lg:items-center">
             <div className="max-w-xl text-left text-white">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-200">

@@ -60,12 +60,12 @@ export default function NhsAgendaForChangeGuidePage() {
         <header
           className="relative flex min-h-[200px] flex-col justify-end px-4 py-10 sm:px-6 sm:min-h-[240px]"
           style={{
-            backgroundImage: "url('https://source.unsplash.com/1600x600/?nurse,medical')",
+            backgroundImage: "url('https://images.unsplash.com/photo-1551076805-e18603bbb4f4?auto=format&fit=crop&w=1600&q=80')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
         >
-          <div className="absolute inset-0 bg-blue-900/70" aria-hidden />
+          <div className="absolute inset-0 bg-blue-900/65" aria-hidden />
           <div className="relative z-10">
             <h1 className="text-3xl font-bold text-white sm:text-4xl">
               NHS Agenda for Change Explained: Complete 2026 Guide

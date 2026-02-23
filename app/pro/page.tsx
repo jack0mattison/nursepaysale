@@ -60,12 +60,12 @@ export default function ProPage() {
       <section
         className="relative px-4 py-16 sm:px-6 sm:py-20"
         style={{
-          backgroundImage: "url('https://source.unsplash.com/1600x900/?career,professional')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1600&q=80')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-blue-900/75" aria-hidden />
+        <div className="absolute inset-0 bg-blue-900/60" aria-hidden />
         <div className="relative z-10 mx-auto flex max-w-content flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-between">
           <div className="max-w-xl text-center text-white lg:text-left">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-blue-200">
@@ -99,12 +99,12 @@ export default function ProPage() {
       <section
         className="relative mx-auto max-w-content px-4 py-12 sm:px-6"
         style={{
-          backgroundImage: "url('https://source.unsplash.com/1600x800/?office,teamwork')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-white/85" aria-hidden />
+        <div className="absolute inset-0 bg-white/70" aria-hidden />
         <div className="relative z-10">
         <h2 className="text-center text-2xl font-bold text-primary">What’s included</h2>
         <p className="mt-2 text-center text-text-secondary">
@@ -132,12 +132,12 @@ export default function ProPage() {
       <section
         className="relative border-t border-border px-4 py-12 sm:px-6"
         style={{
-          backgroundImage: "url('https://source.unsplash.com/1600x600/?laptop,workspace')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute inset-0 bg-bg-light/90" aria-hidden />
+        <div className="absolute inset-0 bg-bg-light/75" aria-hidden />
         <div className="relative z-10">
         <div className="mx-auto max-w-content">
           <div className="mx-auto max-w-md rounded-2xl border border-border bg-white p-8 shadow-md transition-shadow hover:shadow-lg">
