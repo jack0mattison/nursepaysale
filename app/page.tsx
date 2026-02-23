@@ -3,6 +3,7 @@ import { bands } from "@/data/bands";
 import { locations } from "@/data/locations";
 import { formatCurrency } from "@/lib/salary-utils";
 import { SalaryCalculator } from "@/components/calculator/SalaryCalculator";
+import { StatsBar } from "@/components/home/StatsBar";
 
 const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://nursepayscale.co.uk";
 
@@ -133,21 +134,29 @@ export default function HomePage() {
           </div>
         </section>
 
+        <StatsBar />
+
         <section className="mx-auto max-w-content px-4 py-12 sm:px-6">
-          <h2 className="text-2xl font-bold text-primary">Quick band selector</h2>
-          <p className="mt-1 text-text-secondary">Choose a band to see salary by location.</p>
+          <h2 className="text-2xl font-bold text-primary">Choose your band</h2>
+          <p className="mt-1 text-text-secondary">See salary by location for each band.</p>
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {BAND_CARDS.map(({ band, title, entry_salary, top_salary, typical_roles, href }) => (
               <Link
                 key={band}
                 href={href}
-                className="block rounded-xl border border-border p-5 text-left hover:border-primary hover:bg-bg-light"
+                className="group flex flex-col rounded-xl border border-border bg-white p-5 text-left shadow-sm transition-all hover:border-primary hover:shadow-md"
               >
                 <h3 className="font-semibold text-primary">{title}</h3>
                 <p className="mt-1 text-sm font-medium text-text-primary">
                   {formatCurrency(entry_salary)} – {formatCurrency(top_salary)}
                 </p>
                 <p className="mt-1 text-xs text-text-secondary">{typical_roles[0]}</p>
+                <span className="mt-auto pt-3 inline-flex items-center text-sm font-medium text-primary group-hover:translate-x-0.5">
+                  View salary pages
+                  <svg className="ml-1 h-4 w-4 shrink-0 transition-transform group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </span>
               </Link>
             ))}
           </div>
@@ -160,7 +169,7 @@ export default function HomePage() {
               <Link
                 key={`${band}-${location}`}
                 href={`/band-${band}-nurse-salary/${location}`}
-                className="rounded-full border border-border bg-white px-4 py-2 text-sm text-text-primary hover:border-primary hover:bg-bg-light"
+                className="rounded-full border border-border bg-white px-4 py-2 text-sm text-text-primary transition hover:border-primary hover:bg-bg-light"
               >
                 {label}
               </Link>
@@ -171,11 +180,11 @@ export default function HomePage() {
         <section className="mx-auto max-w-content px-4 py-12 sm:px-6">
           <h2 className="text-2xl font-bold text-primary">Calculator preview</h2>
           <p className="mt-1 text-text-secondary">Estimate take-home pay. Full calculator includes tax, NI and pension.</p>
-          <div className="mt-6 rounded-xl border border-border bg-white p-6">
+          <div className="mt-6 rounded-xl border border-border bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
             <SalaryCalculator />
           </div>
           <p className="mt-4">
-            <Link href="/tools/nhs-salary-calculator" className="text-primary-light font-medium hover:underline">
+            <Link href="/tools/nhs-salary-calculator" className="text-primary-light font-medium transition hover:underline">
               Open full salary calculator →
             </Link>
           </p>
@@ -188,24 +197,24 @@ export default function HomePage() {
               Join 1,000+ nurses using AI to advance their careers. Negotiation scripts, progression roadmaps, CV reviews and interview prep.
             </p>
             <div className="mt-10 grid gap-8 sm:grid-cols-3">
-              <div className="rounded-xl border border-border bg-white p-6 text-center">
+              <Link href="/pro" className="rounded-xl border border-border bg-white p-6 text-center shadow-sm transition-all hover:border-primary hover:shadow-md">
                 <h3 className="font-semibold text-primary">Negotiation Coach</h3>
                 <p className="mt-2 text-sm text-text-secondary">Get a personalised script for your appraisal or band discussion.</p>
-                <Link href="/pro" className="mt-4 inline-block text-primary-light text-sm font-medium hover:underline">Learn more</Link>
-              </div>
-              <div className="rounded-xl border border-border bg-white p-6 text-center">
+                <span className="mt-4 inline-block text-primary-light text-sm font-medium">Learn more</span>
+              </Link>
+              <Link href="/pro" className="rounded-xl border border-border bg-white p-6 text-center shadow-sm transition-all hover:border-primary hover:shadow-md">
                 <h3 className="font-semibold text-primary">Progression Roadmap</h3>
                 <p className="mt-2 text-sm text-text-secondary">Timeline and steps to reach your target band.</p>
-                <Link href="/pro" className="mt-4 inline-block text-primary-light text-sm font-medium hover:underline">Learn more</Link>
-              </div>
-              <div className="rounded-xl border border-border bg-white p-6 text-center">
+                <span className="mt-4 inline-block text-primary-light text-sm font-medium">Learn more</span>
+              </Link>
+              <Link href="/pro" className="rounded-xl border border-border bg-white p-6 text-center shadow-sm transition-all hover:border-primary hover:shadow-md">
                 <h3 className="font-semibold text-primary">CV Reviewer</h3>
                 <p className="mt-2 text-sm text-text-secondary">AI review of your CV or personal statement for band applications.</p>
-                <Link href="/pro" className="mt-4 inline-block text-primary-light text-sm font-medium hover:underline">Learn more</Link>
-              </div>
+                <span className="mt-4 inline-block text-primary-light text-sm font-medium">Learn more</span>
+              </Link>
             </div>
             <div className="mt-8 text-center">
-              <Link href="/pro" className="rounded-lg bg-primary px-6 py-3 font-medium text-white hover:bg-primary-light">
+              <Link href="/pro" className="inline-block rounded-lg bg-primary px-6 py-3 font-medium text-white transition hover:bg-primary-light">
                 View Pro – £9.99/month
               </Link>
             </div>

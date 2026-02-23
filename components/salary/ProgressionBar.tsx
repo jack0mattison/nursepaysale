@@ -11,7 +11,7 @@ export function ProgressionBar({ currentBand }: ProgressionBarProps) {
   if (currentIndex < 0) return null;
 
   return (
-    <div className="rounded-lg border border-border bg-white p-4">
+    <div className="rounded-lg border border-border bg-white p-4 shadow-sm transition-shadow hover:shadow-md">
       <h3 className="mb-3 font-semibold text-primary">Band progression</h3>
       <div className="flex flex-wrap items-center gap-1">
         {bandKeys.map((key, i) => {

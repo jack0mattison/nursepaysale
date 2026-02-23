@@ -6,6 +6,7 @@ import { SalaryTable } from "@/components/salary/SalaryTable";
 import { TakeHomeTable } from "@/components/salary/TakeHomeTable";
 import { LocationCompare } from "@/components/salary/LocationCompare";
 import { ProgressionBar } from "@/components/salary/ProgressionBar";
+import { SalaryProgressionBar } from "@/components/salary/SalaryProgressionBar";
 import { ProCTA } from "@/components/pro/ProCTA";
 import { FAQSchema } from "@/components/seo/FAQSchema";
 import { BreadcrumbSchema } from "@/components/seo/BreadcrumbSchema";
@@ -120,6 +121,10 @@ export default async function BandLocationPage({
               Find out exactly what a Band {band} nurse earns in {loc.name}. Below are the full Agenda for Change pay scales for Band {band} in {loc.name}, including entry, mid and top salaries, plus estimated take-home pay after tax, National Insurance and NHS pension.
             </p>
 
+            <section className="mt-6">
+              <SalaryProgressionBar band={band} locationSlug={location} />
+            </section>
+
             <section className="mt-8">
               <h2 className="text-xl font-semibold text-primary">Band {band} pay scale in {loc.name}</h2>
               <div className="mt-3">
@@ -194,7 +199,7 @@ export default async function BandLocationPage({
 
           <aside className="space-y-6">
             <ProgressionBar currentBand={band} />
-            <div className="rounded-lg border border-border p-4">
+            <div className="rounded-lg border border-border p-4 shadow-sm transition-shadow hover:shadow-md">
               <h3 className="font-semibold text-primary">Same band, other cities</h3>
               <ul className="mt-2 space-y-1 text-sm">
                 {otherCities.map((c) => (
@@ -209,7 +214,7 @@ export default async function BandLocationPage({
                 ))}
               </ul>
             </div>
-            <div className="rounded-lg border border-border p-4">
+            <div className="rounded-lg border border-border p-4 shadow-sm transition-shadow hover:shadow-md">
               <h3 className="font-semibold text-primary">Same location, other bands</h3>
               <ul className="mt-2 space-y-1 text-sm">
                 {adjacentBands.map((b) => (
@@ -226,7 +231,7 @@ export default async function BandLocationPage({
             </div>
             <Link
               href="/tools/nhs-salary-calculator"
-              className="block rounded-lg border border-primary bg-bg-light p-4 text-center font-medium text-primary hover:bg-primary hover:text-white"
+              className="block rounded-lg border border-primary bg-bg-light p-4 text-center font-medium text-primary transition hover:bg-primary hover:text-white"
             >
               Use the salary calculator
             </Link>
