@@ -57,22 +57,10 @@ export default async function GuidePage({
         description={guide.description}
         url={`/guides/${slug}`}
       />
-      <article className="mx-auto max-w-content">
-        <header
-          className="relative flex min-h-[200px] flex-col justify-end px-4 py-10 sm:px-6 sm:min-h-[240px]"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="absolute inset-0 bg-blue-900/65" aria-hidden />
-          <div className="relative z-10">
-            <h1 className="text-3xl font-bold text-white sm:text-4xl">{guide.title}</h1>
-            <p className="mt-2 text-blue-100">{guide.description}</p>
-          </div>
-        </header>
-        <div className="px-4 py-8 sm:px-6">
+      <article className="mx-auto max-w-content px-4 py-8 sm:px-6">
+        <h1 className="text-3xl font-bold text-primary sm:text-4xl">{guide.title}</h1>
+        <p className="mt-3 text-text-secondary">{guide.description}</p>
+        <div className="mt-8">
         <div className="prose prose-primary max-w-none">
           <p>
             This guide will be expanded with full content. In the meantime, use our{" "}

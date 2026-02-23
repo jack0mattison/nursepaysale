@@ -56,26 +56,15 @@ export default function NhsAgendaForChangeGuidePage() {
         url="/guides/nhs-agenda-for-change-explained"
         modifiedTime="2026-02-01"
       />
-      <article className="mx-auto max-w-content">
-        <header
-          className="relative flex min-h-[200px] flex-col justify-end px-4 py-10 sm:px-6 sm:min-h-[240px]"
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1551076805-e18603bbb4f4?auto=format&fit=crop&w=1600&q=80')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-        >
-          <div className="absolute inset-0 bg-blue-900/65" aria-hidden />
-          <div className="relative z-10">
-            <h1 className="text-3xl font-bold text-white sm:text-4xl">
-              NHS Agenda for Change Explained: Complete 2026 Guide
-            </h1>
-            <p className="mt-2 text-blue-100">
-              Everything you need to know about NHS Agenda for Change pay bands, salary progression, and how your pay is calculated. Updated for 2025/26.
-            </p>
-          </div>
+      <article className="mx-auto max-w-content px-4 py-8 sm:px-6">
+        <header>
+          <h1 className="text-3xl font-bold text-primary sm:text-4xl">
+            NHS Agenda for Change Explained: Complete 2026 Guide
+          </h1>
+          <p className="mt-2 text-text-secondary">
+            Everything you need to know about NHS Agenda for Change pay bands, salary progression, and how your pay is calculated. Updated for 2025/26.
+          </p>
         </header>
-        <div className="px-4 py-8 sm:px-6">
 
         <div className="prose prose-slate mt-10 max-w-none prose-headings:font-semibold prose-headings:text-primary prose-p:text-text-primary prose-li:text-text-primary prose-strong:text-text-primary">
           <h2 id="what-is-afc">What is Agenda for Change?</h2>
@@ -259,7 +248,6 @@ export default function NhsAgendaForChangeGuidePage() {
             </Link>
           </p>
         </footer>
-        </div>
       </article>
     </>
   );

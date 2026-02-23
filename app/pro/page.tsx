@@ -96,16 +96,7 @@ export default function ProPage() {
       </section>
 
       {/* Feature cards */}
-      <section
-        className="relative mx-auto max-w-content px-4 py-12 sm:px-6"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-white/70" aria-hidden />
-        <div className="relative z-10">
+      <section className="mx-auto max-w-content px-4 py-12 sm:px-6">
         <h2 className="text-center text-2xl font-bold text-primary">What’s included</h2>
         <p className="mt-2 text-center text-text-secondary">
           Three core tools, plus progression roadmap — all in one subscription.
@@ -125,20 +116,10 @@ export default function ProPage() {
             </Link>
           ))}
         </div>
-        </div>
       </section>
 
       {/* Pricing + benefits */}
-      <section
-        className="relative border-t border-border px-4 py-12 sm:px-6"
-        style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80')",
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
-        <div className="absolute inset-0 bg-bg-light/75" aria-hidden />
-        <div className="relative z-10">
+      <section className="border-t border-border bg-bg-light px-4 py-12 sm:px-6">
         <div className="mx-auto max-w-content">
           <div className="mx-auto max-w-md rounded-2xl border border-border bg-white p-8 shadow-md transition-shadow hover:shadow-lg">
             <p className="text-center text-sm font-semibold uppercase tracking-wider text-text-secondary">
@@ -165,7 +146,6 @@ export default function ProPage() {
               Get Pro
             </Link>
           </div>
-        </div>
         </div>
       </section>
 
