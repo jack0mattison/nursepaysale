@@ -1,10 +1,10 @@
 "use client";
 
-import { ReactNode } from "react";
+import type { FormEvent, ReactNode } from "react";
 
 interface ToolFormProps {
   children: ReactNode;
-  onSubmit: (e: React.FormEvent) => void;
+  onSubmit: (e: FormEvent<HTMLFormElement>) => void | Promise<void>;
   isSubmitting?: boolean;
   submitLabel?: string;
 }
@@ -15,8 +15,12 @@ export function ToolForm({
   isSubmitting = false,
   submitLabel = "Submit",
 }: ToolFormProps) {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    void onSubmit(event);
+  };
+
   return (
-    <form onSubmit={onSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-4">
       {children}
       <button
         type="submit"
