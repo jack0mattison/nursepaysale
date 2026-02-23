@@ -45,7 +45,7 @@ export default async function GuidePage({
 
   const breadcrumbs = [
     { name: "Home", url: "/" },
-    { name: "Guides", url: "/guides/nhs-agenda-for-change-explained" },
+    { name: "Guides", url: "/guides" },
     { name: guide.title, url: `/guides/${slug}` },
   ];
 
@@ -57,10 +57,23 @@ export default async function GuidePage({
         description={guide.description}
         url={`/guides/${slug}`}
       />
-      <article className="mx-auto max-w-content px-4 py-8 sm:px-6">
-        <h1 className="text-3xl font-bold text-text-primary">{guide.title}</h1>
-        <p className="mt-3 text-text-secondary">{guide.description}</p>
-        <div className="prose prose-primary mt-8 max-w-none">
+      <article className="mx-auto max-w-content">
+        <header
+          className="relative flex min-h-[200px] flex-col justify-end px-4 py-10 sm:px-6 sm:min-h-[240px]"
+          style={{
+            backgroundImage: "url('https://source.unsplash.com/1600x600/?healthcare,nursing')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        >
+          <div className="absolute inset-0 bg-blue-900/70" aria-hidden />
+          <div className="relative z-10">
+            <h1 className="text-3xl font-bold text-white sm:text-4xl">{guide.title}</h1>
+            <p className="mt-2 text-blue-100">{guide.description}</p>
+          </div>
+        </header>
+        <div className="px-4 py-8 sm:px-6">
+        <div className="prose prose-primary max-w-none">
           <p>
             This guide will be expanded with full content. In the meantime, use our{" "}
             <Link href="/tools/nhs-salary-calculator" className="text-primary-light hover:underline">
@@ -72,6 +85,7 @@ export default async function GuidePage({
             </Link>{" "}
             for pay information.
           </p>
+        </div>
         </div>
       </article>
     </>
