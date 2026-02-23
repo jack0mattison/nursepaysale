@@ -19,6 +19,13 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "Pro subscription required" }, { status: 403 });
   }
 
+  if (!process.env.ANTHROPIC_API_KEY?.trim()) {
+    return NextResponse.json(
+      { error: "AI service is not configured. Add ANTHROPIC_API_KEY to your environment variables." },
+      { status: 503 }
+    );
+  }
+
   const contentType = req.headers.get("content-type") || "";
   let cvContent = "";
   let targetBand = "";
@@ -71,9 +78,10 @@ Be specific and actionable. Reference actual NHS frameworks where relevant (e.g.
     return NextResponse.json({ content: text });
   } catch (err) {
     console.error("Anthropic API error:", err);
-    return NextResponse.json(
-      { error: "Failed to generate response" },
-      { status: 500 }
-    );
+    const status = err && typeof err === "object" && "status" in err ? (err as { status: number }).status : undefined;
+    let errorMessage = "Failed to generate response";
+    if (status === 401) errorMessage = "Invalid or missing API key. Add ANTHROPIC_API_KEY to your environment.";
+    else if (status === 429) errorMessage = "Too many requests. Please try again in a moment.";
+    return NextResponse.json({ error: errorMessage }, { status: 500 });
   }
 }
