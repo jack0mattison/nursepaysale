@@ -69,20 +69,6 @@ export default function HomePage() {
                 calculator built just for NHS nurses.
               </p>
 
-              <div className="mt-6 inline-flex items-baseline gap-3 rounded-full bg-blue-700/60 px-4 py-2 text-sm text-blue-100">
-                <div className="relative inline-flex items-baseline gap-1">
-                  <span className="text-xs font-semibold uppercase tracking-[0.16em] text-blue-200">
-                    Coverage
-                  </span>
-                  <span className="ml-2 text-2xl font-semibold leading-none text-white animate-pulse">
-                    395+
-                  </span>
-                  <span className="text-xs font-medium text-blue-200">
-                    salary pages across UK bands &amp; locations
-                  </span>
-                </div>
-              </div>
-
               <div className="mt-8 flex flex-wrap gap-4">
                 <Link
                   href="/band-5-nurse-salary"
