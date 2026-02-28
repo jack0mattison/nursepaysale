@@ -27,7 +27,7 @@ export default function TermsPage() {
         </p>
       </header>
 
-      <div className="prose prose-slate mt-10 max-w-none prose-headings:font-semibold prose-headings:text-primary prose-headings:mt-8 prose-headings:mb-4 prose-p:text-text-primary prose-li:text-text-primary prose-strong:text-text-primary">
+      <div className="legal-content mt-10 max-w-none [&_h2]:mt-10 [&_h2]:mb-3 [&_h2]:pb-2 [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-primary [&_h2]:border-b [&_h2]:border-border [&_h2]:scroll-mt-24 [&_h2:first-of-type]:mt-0 [&_p]:text-text-primary [&_li]:text-text-primary [&_strong]:text-text-primary [&_a]:text-primary-light [&_a:hover]:underline [&_ul]:my-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_ol]:my-4 [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-2">
         <h2 id="about">About the Site</h2>
         <p>
           NursePayScale.co.uk provides NHS Agenda for Change salary information,
